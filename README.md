@@ -1,34 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nuIlzero
 
-## Getting Started
+> Source code for the website of everyone's favorite streamer
 
-First, run the development server:
+## Development
 
-```bash
-npm run dev
-# or
-yarn dev
+This is a [Next.js](https://nextjs.org) project deployed to
+[Vercel](https://vercel.com/). Styling is primarily managed using
+[TailwindCSS](https://tailwindcss.com/).
+
+### Getting Started
+
+Install all dependencies:
+
+```console
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start Next.js in development mode:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```console
+$ npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This will start the app up at: http://localhost:3000/
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+If you're using **Visual Studio Code**, make sure to open the
+`nuilzero.code-workspace` file to automate parts of your local development
+environment.
 
-## Learn More
+### Contributing
 
-To learn more about Next.js, take a look at the following resources:
+For any change, open up a Pull Request against this repository's `develop`
+branch. All changes must produce a successful build.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Coding Style
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Code style consistency is managed by using [ESLint](https://eslint.org/) and
+[Prettier](https://prettier.io/). All JavaScript and TypeScript code must follow
+the [`semistandard`](https://github.com/standard/semistandard) style. All other
+files are formatted using Prettier.
 
-## Deploy on Vercel
+To lint all source files:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```console
+$ npm run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To format all source files, which often fixes most linting errors:
+
+```console
+$ npm run format
+```
+
+### Deployments
+
+This project is deployed to different environments based on branches:
+
+- `develop`: https://dev.nuilzero.tv/
+- `main`: https://nuilzero.tv/
+
+All changes should be made against the `develop` branch. Once changes are ready
+to be released, merge those changes into the `main` branch.
