@@ -1,0 +1,43 @@
+{
+  "name": "nuilzero",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format": "npm run format:src && npm run format:other",
+    "format:src": "npm run lint:src -- --fix",
+    "format:other": "npm run pretty -- --write",
+    "pretty": "prettier '**/*.{json,md}'",
+    "lint": "npm run lint:src && npm run lint:other",
+    "lint:src": "eslint .",
+    "lint:other": "npm run pretty -- --check",
+    "start": "next start",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "autoprefixer": "^10.4.13",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "postcss": "^8.4.19",
+    "prettier": "2.8.0",
+    "tailwindcss": "^3.2.4",
+    "typescript": "4.9.3"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.1.3"
+  }
+}

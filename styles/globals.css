@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Hubot Sans";
+  src: url("../public/fonts/Hubot-Sans.woff2")
+      format("woff2 supports variations"),
+    url("../public/fonts/Hubot-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+html,
+body {
+  @apply p-0 m-0 font-sans;
+}
+
+a {
+  @apply no-underline;
+}
+
+* {
+  @apply box-border;
+}
+
+body {
+  @apply text-white bg-midnight-200;
+  font-family: "Hubot Sans", sans-serif;
+}
