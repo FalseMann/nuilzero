@@ -11,6 +11,7 @@ module.exports = {
           100: "#1A1A23",
           200: "#15151D",
         },
+        twitchColor: "#6441a5",
       },
     },
   },
