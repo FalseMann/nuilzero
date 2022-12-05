@@ -1,5 +1,8 @@
 import React from "react";
 
+const APP_HOSTNAME =
+  process.env.NEXT_PUBLIC_APP_HOSTNAME ?? process.env.VERCEL_URL;
+
 export default function Home() {
   return (
     <>
@@ -17,21 +20,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* This commented code is for showing the twitch embed on local host, the uncommented should work when deployed to vercel ( not entirely sure but after the first push 
-          we will know if it works for sure) */}
-        {/* <div id="Twitch player">
+        <div id="twitch-player">
           <iframe
             className="container text-center items-center h-[32rem]"
-            src="https://player.twitch.tv/?channel=nuilzero&parent=localhost"
-            frameBorder="0"
-            allowFullScreen={true}
-            scrolling="no"
-          ></iframe>
-        </div> */}
-        <div id="Twitch player">
-          <iframe
-            className="container text-center items-center h-[32rem]"
-            src="https://player.twitch.tv/?channel=nuilzero&parent=https://nuilzero.tv/"
+            src={`https://player.twitch.tv/?channel=nuilzero&parent=${APP_HOSTNAME}`}
             frameBorder="0"
             allowFullScreen={true}
             scrolling="no"
