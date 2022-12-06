@@ -16,6 +16,12 @@ Install all dependencies:
 $ npm install
 ```
 
+Copy the sample env config to a local one:
+
+```console
+$ cp .env.sample .env
+```
+
 Start Next.js in development mode:
 
 ```console
