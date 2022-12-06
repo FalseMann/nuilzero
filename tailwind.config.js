@@ -12,6 +12,7 @@ module.exports = {
           200: "#15151D",
         },
         twitchColor: "#6441a5",
+        footerText: "#7A8BAF",
       },
     },
   },
