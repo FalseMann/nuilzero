@@ -6,16 +6,16 @@ export default function MainNav() {
     <>
       <nav className="flex justify-between w-3/4">
         <div className="text-base font-bold text-red-400">
-            <Link href="/">nuilzero</Link>
+          <Link href="/">nuilzero</Link>
         </div>
         <div className="text-xs font-bold leading-6">
-            <Link href="/movie-night">Movie Night</Link>
+          <Link href="/movie-night">Movie Night</Link>
         </div>
         <div className="text-xs font-bold leading-6">
-            <a href="https://discord.gg/xzrj9FfszD">Discord</a>
+          <a href="https://discord.gg/xzrj9FfszD">Discord</a>
         </div>
         <div className="text-xs font-bold leading-6">
-            <a href="https://www.twitch.tv/products/nuilzero">Subscribe</a>
+          <a href="https://www.twitch.tv/products/nuilzero">Subscribe</a>
         </div>
       </nav>
     </>
