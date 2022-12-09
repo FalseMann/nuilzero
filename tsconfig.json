@@ -19,6 +19,6 @@
     // Tell ts-node CLI to install the --loader automatically
     "esm": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prisma/prismaScript.ts.mjs"],
   "exclude": ["node_modules"]
 }
