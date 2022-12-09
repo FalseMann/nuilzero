@@ -5,18 +5,14 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/nuilzeroTwitch",
-        destination: "https://twitch.tv/nuilzero",
+        source: "/github",
+        destination: "https://github.com/FalseMann/nuilzero",
         permanent: false,
         basePath: false,
       },
-    ];
-  },
-  async redirects() {
-    return [
       {
-        source: "/github",
-        destination: "https://github.com/FalseMann/nuilzero",
+        source: "/twitch",
+        destination: "https://twitch.tv/nuilzero",
         permanent: false,
         basePath: false,
       },
