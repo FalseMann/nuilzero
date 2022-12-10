@@ -5,6 +5,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/discord",
+        destination: "https://discord.gg/xzrj9FfszD",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/github",
         destination: "https://github.com/FalseMann/nuilzero",
         permanent: false,
