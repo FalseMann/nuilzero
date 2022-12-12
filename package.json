@@ -4,19 +4,24 @@
   "version": "1.0.0",
   "scripts": {
     "build": "next build",
+    "db:client": "prisma generate",
+    "db:migration": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "db:sync": "prisma migrate deploy",
     "dbs": "docker-compose up",
     "dev": "next dev",
     "format": "npm run format:src && npm run format:other",
-    "format:src": "npm run lint:src -- --fix",
     "format:other": "npm run pretty -- --write",
-    "pretty": "prettier '**/*.{json,md}'",
+    "format:src": "npm run lint:src -- --fix",
     "lint": "npm run lint:src && npm run lint:other",
-    "lint:src": "eslint .",
     "lint:other": "npm run pretty -- --check",
-    "start": "next start",
-    "prepare": "husky install"
+    "lint:src": "eslint .",
+    "prepare": "husky install && npm run db:client",
+    "pretty": "prettier '**/*.{json,md}'",
+    "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "^4.7.1",
     "ioredis": "^5.2.4",
     "next": "13.0.5",
     "react": "18.2.0",
@@ -25,7 +30,7 @@
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@types/node": "18.11.10",
+    "@types/node": "^18.11.10",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "autoprefixer": "^10.4.13",
@@ -37,8 +42,13 @@
     "husky": "^8.0.2",
     "postcss": "^8.4.19",
     "prettier": "2.8.0",
+    "prisma": "^4.7.1",
     "tailwindcss": "^3.2.4",
+    "ts-node": "^10.9.1",
     "typescript": "4.9.3"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "volta": {
     "node": "18.12.1",

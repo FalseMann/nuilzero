@@ -1,6 +1,14 @@
 version: '3'
 
 services:
+  mysql:
+    image: "mysql:8"
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=my5q1
+    restart: always
   redis:
     image: 'redis:7'
     ports:
