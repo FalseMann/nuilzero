@@ -22,6 +22,12 @@ Copy the sample env config to a local one:
 $ cp .env.sample .env
 ```
 
+Start the project's databases using Docker:
+
+```console
+$ npm run dbs
+```
+
 Start Next.js in development mode:
 
 ```console
