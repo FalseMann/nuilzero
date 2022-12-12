@@ -1,7 +1,7 @@
 import { VideoPlayer } from "../components/VideoPlayer";
 import { Chat } from "../components/Chat";
-import { APP_HOSTNAME } from "../lib/config";
 import { MainLayout } from "../components/layouts/MainLayout";
+import { APP_HOSTNAME } from "../lib/config/client";
 
 export default function Home() {
   return (
