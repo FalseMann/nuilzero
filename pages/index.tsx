@@ -1,14 +1,13 @@
-import Footer from "./components/Footer";
-import MainBody from "./components/MainBody";
-
-const APP_HOSTNAME =
-  process.env.NEXT_PUBLIC_APP_HOSTNAME ?? process.env.VERCEL_URL;
+import { VideoPlayer } from "../components/VideoPlayer";
+import { Chat } from "../components/Chat";
+import { APP_HOSTNAME } from "../lib/config";
+import { MainLayout } from "../components/layouts/MainLayout";
 
 export default function Home() {
   return (
-    <div className="justify-between h-screen">
-      <MainBody APP_HOSTNAME={APP_HOSTNAME} />
-      <Footer />
-    </div>
+    <MainLayout>
+      <VideoPlayer appHostname={APP_HOSTNAME} />
+      <Chat appHostname={APP_HOSTNAME} />
+    </MainLayout>
   );
 }

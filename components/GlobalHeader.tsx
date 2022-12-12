@@ -1,6 +1,6 @@
-import { Link } from "./GlobalNav/Link";
+import { Link } from "./GlobalHeader/Link";
 
-export function GlobalNav() {
+export function GlobalHeader() {
   return (
     <div className="flex mb-5">
       <div className="flex space-x-8">

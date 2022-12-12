@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-export default function Footer() {
+export function GlobalFooter() {
   const router = useRouter();
   // condition base redirecting
   function redirectToTwitch() {
