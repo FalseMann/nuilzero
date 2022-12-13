@@ -1,0 +1,23 @@
+name: Develop
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  develop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+      - run: npm ci
+      - name: Run database migrations and seed database
+        env:
+          DATABASE_URL: ${{ secrets.DEV_DATABASE_URL }}
+        run: |
+          npm run db:migrate
+          npm run db:seed

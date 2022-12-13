@@ -1,0 +1,29 @@
+name: Preview
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - name: Determine $DATABASE_URL
+        env:
+          BASE_DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+        run: |
+          DATABASE_SCHEMA=$(echo ${GITHUB_HEAD_REF} | sed 's:/:__:g')
+          DATABASE_URL=${BASE_DATABASE_URL}?schema=${DATABASE_SCHEMA}
+          echo "DATABASE_URL=${DATABASE_URL}" >> $GITHUB_ENV
+      - name: Run database migrations and seed database
+        run: |
+          npm run db:migrate
+          npm run db:seed

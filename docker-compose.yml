@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: "p0stgr3s"
+    ports:
+      - "5432:5432"
+    restart: always
   redis:
     image: 'redis:7'
     ports:
