@@ -6,6 +6,7 @@ async function main() {
     where: { email: "donkey@kong.com" },
     update: {},
     create: {
+      name: "Donkey Kong",
       email: "donkey@kong.com",
     },
   });
@@ -13,6 +14,7 @@ async function main() {
     where: { email: "diddy@kong.com" },
     update: {},
     create: {
+      name: "Diddy Kong",
       email: "diddy@kong.com",
     },
   });
