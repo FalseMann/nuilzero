@@ -17,6 +17,7 @@
     "lint": "npm run lint:src && npm run lint:other",
     "lint:other": "npm run pretty -- --check",
     "lint:src": "eslint .",
+    "prebuild": "npm run db:client",
     "prepare": "husky install && npm run db:client",
     "pretty": "prettier '**/*.{json,md}'",
     "start": "next start"

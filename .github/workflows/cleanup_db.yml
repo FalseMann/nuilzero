@@ -1,0 +1,18 @@
+name: Delete PR Preview Database
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      # TODO: make this reusable
+      - name: Determine $DATABASE_SCHEMA
+        run: |
+          echo "DATABASE_SCHEMA=$(echo ${GITHUB_HEAD_REF} | sed 's:/:__:g')" >> $GITHUB_ENV
+      - name: Drop Postgres Schema
+        env:
+          DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+        run: |
+          echo "DROP SCHEMA IF EXISTS \"${DATABASE_SCHEMA}\" CASCADE;" | npx prisma db execute --stdin --url "${DATABASE_URL}"
