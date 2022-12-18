@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  @apply no-underline;
+  @apply no-underline text-white;
 }
 
 * {

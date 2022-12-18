@@ -7,19 +7,25 @@ const nextConfig = {
       {
         source: "/discord",
         destination: "https://discord.gg/xzrj9FfszD",
-        permanent: false,
+        permanent: true,
         basePath: false,
       },
       {
         source: "/github",
         destination: "https://github.com/FalseMann/nuilzero",
-        permanent: false,
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: "/subscribe",
+        destination: "https://twitch.tv/nuilzero/subscribe",
+        permanent: true,
         basePath: false,
       },
       {
         source: "/twitch",
         destination: "https://twitch.tv/nuilzero",
-        permanent: false,
+        permanent: true,
         basePath: false,
       },
     ];
