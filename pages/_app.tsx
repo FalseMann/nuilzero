@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    init();
+    init({ zIndex: 0 });
   });
   return (
     <>
