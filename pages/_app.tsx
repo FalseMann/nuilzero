@@ -1,8 +1,14 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+// @ts-ignore
+import { init } from "snowflakes";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    init();
+  });
   return (
     <>
       <Head>
