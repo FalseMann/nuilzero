@@ -1,13 +1,22 @@
-import { VideoPlayer } from "../components/VideoPlayer";
-import { Chat } from "../components/Chat";
 import { MainLayout } from "../components/layouts/MainLayout";
-import { APP_HOSTNAME } from "../lib/config/client";
+import Script from "next/script";
 
 export default function Home() {
   return (
     <MainLayout>
-      <VideoPlayer appHostname={APP_HOSTNAME} />
-      <Chat appHostname={APP_HOSTNAME} />
+      <div id="twitch-embed" className="h-full z-10"></div>
+      <Script
+        src="https://embed.twitch.tv/embed/v1.js"
+        onLoad={() => {
+          /* eslint-disable */
+          // @ts-ignore
+          new Twitch.Embed("twitch-embed", {
+            channel: "nuilzero",
+            height: "100%",
+            width: "100%",
+          });
+        }}
+      />
     </MainLayout>
   );
 }
