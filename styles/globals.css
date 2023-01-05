@@ -17,7 +17,11 @@ body {
 }
 
 a {
-  @apply no-underline text-white;
+  @apply text-white no-underline;
+}
+
+.bg-white a {
+  @apply text-midnight-100;
 }
 
 * {
