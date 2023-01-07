@@ -3,7 +3,10 @@ import config from "../config";
 
 let client: Client;
 
-export const callbackUrl = "http://localhost:3000/api/auth/callback";
+export const callbackUrl = new URL(
+  "/api/auth/callback",
+  config.env.origin
+).toString();
 export const identityProvider = "https://id.twitch.tv/oauth2";
 
 export async function getClient(): Promise<Client> {
