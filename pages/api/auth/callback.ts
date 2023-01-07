@@ -23,6 +23,7 @@ export default async function handler(
 
     res.redirect("/");
   } catch (error) {
+    console.error(error);
     sendError(res, new AuthenticationError());
   }
 }
