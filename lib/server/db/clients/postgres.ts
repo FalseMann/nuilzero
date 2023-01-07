@@ -5,7 +5,7 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
 let databaseUrl = config.postgres.url;
 
-if (config.env.vercel === "preview") {
+if (config.env.vercel === "preview" && config.env.branch !== "develop") {
   databaseUrl = `${databaseUrl}?schema=${convertBranchToSchemaName(
     config.env.branch
   )}`;
