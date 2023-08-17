@@ -1,13 +1,10 @@
-import { VideoPlayer } from "../components/VideoPlayer";
-import { Chat } from "../components/Chat";
-import { MainLayout } from "../components/layouts/MainLayout";
-import config from "../lib/browser/config";
-
 export default function Home() {
   return (
-    <MainLayout>
-      <VideoPlayer appHostname={config.env.hostname} />
-      <Chat appHostname={config.env.hostname} />
-    </MainLayout>
+    <div className="video-container">
+      <video width="100%" height="100%" autoPlay controls>
+        <source src="/still-alive.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   );
 }
